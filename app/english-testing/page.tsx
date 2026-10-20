@@ -138,6 +138,17 @@ export default function EnglishTestingPage() {
               </Reveal>
             ))}
           </div>
+
+          {/* Identity verification and the pass summary in one view: the selfie face-matched
+              against the CDL, and the score that follows from it. The licence itself is
+              pixelated beyond recovery — what matters here is that the check happened and at
+              what confidence, not what is printed on the card. */}
+          <div className="mt-10">
+            <Shot
+              src="/screenshots/elp-identity-verified.png"
+              alt="An ELP result: 18 correct answers with a Success verdict, above an identity-verification panel showing the driver's selfie matched against their CDL at 98.6% similarity, with the licence details obscured"
+            />
+          </div>
         </div>
       </section>
 
