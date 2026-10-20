@@ -103,7 +103,8 @@ export default function ComparisonPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader motif="columns" />
+        <PostHeader photo="highway"
+                    alt="The road every DOT-compliance vendor claims to keep you legal on" />
 
         {/* Lead answer (AEO) */}
         <div className="mt-10 rounded-lg border-l-4 border-accent bg-surface-2 p-5">

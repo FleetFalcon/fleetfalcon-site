@@ -101,7 +101,8 @@ export default function KellerAlternativesPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader motif="columns" />
+        <PostHeader photo="warehouse"
+                    alt="The operation a legacy compliance platform was built around" />
 
         {/* Lead answer (AEO) */}
         <div className="mt-10 rounded-lg border-l-4 border-accent bg-surface-2 p-5">

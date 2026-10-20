@@ -102,7 +102,8 @@ export default function DqFilePostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader motif="documents" />
+        <PostHeader photo="truck-cab"
+                    alt="The cab of a commercial vehicle — the driver whose qualification file the rule is about" />
 
         {/* Lead answer (AEO) */}
         <div className="mt-10 rounded-lg border-l-4 border-accent bg-surface-2 p-5">

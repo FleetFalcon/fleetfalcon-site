@@ -1,6 +1,27 @@
 import Image from "next/image";
 
 /**
+ * Photographs used on post headers, with the licence each one carries.
+ *
+ * All are from Wikimedia Commons under licences that permit commercial use. Roughly half are CC0
+ * or public domain and need no credit; the rest are CC BY and legally require attribution, which
+ * is rendered under the image rather than being left as an intention. Keeping the licence beside
+ * the filename means nobody has to go looking for it later, and a photo cannot be added without
+ * someone deciding what it is licensed under.
+ */
+const photos: Record<string, { license: string; artist: string; source: string; attribute: boolean }> = {
+  "canada-highway": { license: "CC BY 2.0", artist: "Janusz Sobolewski", source: "https://commons.wikimedia.org/wiki/File%3ATrans%20Canada%20Highway-1.%20Ontario.jpg", attribute: true },
+  "container-truck": { license: "CC BY 4.0", artist: "VynedJ", source: "https://commons.wikimedia.org/wiki/File%3AHapag-Lloyd%20container%20truck%20in%20Oakville%2C%20Ontario%2020260626.jpg", attribute: true },
+  "delivery-truck": { license: "CC BY 4.0", artist: "VynedJ", source: "https://commons.wikimedia.org/wiki/File%3AAmazon%20truck%20in%20Oakville%2C%20Ontario%2020260626.jpg", attribute: true },
+  "highway": { license: "CC0", artist: "Carlos ZGZ from Paris, France", source: "https://commons.wikimedia.org/wiki/File%3AHighway%205%20%2823907406419%29.jpg", attribute: false },
+  "semi-trucks": { license: "CC BY 2.0", artist: "Thank You (21 Millions+) views", source: "https://commons.wikimedia.org/wiki/File%3AColorful%20Semi-Trucks.jpg", attribute: true },
+  "truck-cab": { license: "Public domain", artist: "ErgoSum88", source: "https://commons.wikimedia.org/wiki/File%3ATruck%20cab.JPG", attribute: false },
+  "warehouse": { license: "Public domain", artist: "Barry Bahler", source: "https://commons.wikimedia.org/wiki/File%3AFEMA%20-%2037522%20-%20Commodities%20inside%20the%20Florida%20Emergency%20Management%20Logistics%20Division.jpg", attribute: false },
+};
+
+export type Photo = keyof typeof photos;
+
+/**
  * The image at the top of a blog post.
  *
  * Two kinds, and the choice is deliberate rather than decorative. Where a real product screenshot
@@ -161,13 +182,43 @@ function Art({ motif }: { motif: Motif }) {
 export function PostHeader({
   motif,
   image,
+  photo,
   alt,
 }: {
-  motif: Motif;
+  motif?: Motif;
   /** A real product screenshot, where one genuinely illustrates the subject. */
   image?: string;
+  /** A licensed photograph from `public/blog`, credited automatically where required. */
+  photo?: string;
   alt?: string;
 }) {
+  if (photo) {
+    const meta = photos[photo];
+    return (
+      <figure className="mt-8">
+        <div className="relative aspect-[16/7] w-full overflow-hidden rounded-xl border border-border bg-surface-2">
+          <Image
+            src={`/blog/${photo}.jpg`}
+            alt={alt ?? ""}
+            fill
+            sizes="(max-width: 768px) 100vw, 720px"
+            className="object-cover"
+            priority
+          />
+        </div>
+        {meta?.attribute && (
+          <figcaption className="mt-2 text-xs text-foreground-faint">
+            Photo:{" "}
+            <a href={meta.source} className="underline" rel="noopener nofollow">
+              {meta.artist}
+            </a>{" "}
+            · {meta.license}
+          </figcaption>
+        )}
+      </figure>
+    );
+  }
+
   if (image) {
     return (
       <div className="relative mt-8 aspect-[16/7] w-full overflow-hidden rounded-xl border border-border bg-surface-2">
@@ -179,7 +230,7 @@ export function PostHeader({
 
   return (
     <div className="mt-8 aspect-[16/7] w-full overflow-hidden rounded-xl border border-border bg-gradient-to-br from-accent-faint via-surface-2 to-surface-2 p-5">
-      <Art motif={motif} />
+      <Art motif={motif ?? "documents"} />
     </div>
   );
 }

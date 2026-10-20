@@ -101,7 +101,8 @@ export default function TmsPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader motif="columns" />
+        <PostHeader photo="container-truck"
+                    alt="The load your TMS tracks — and the compliance obligation it does not" />
 
         {/* Lead answer (AEO) */}
         <div className="mt-10 rounded-lg border-l-4 border-accent bg-surface-2 p-5">

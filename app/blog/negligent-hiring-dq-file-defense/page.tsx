@@ -101,7 +101,8 @@ export default function NegligentHiringPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader motif="shield" />
+        <PostHeader photo="semi-trucks"
+                    alt="Trucks in service — every one of them driven by someone whose file has to hold up" />
 
         {/* Lead answer (AEO) */}
         <div className="mt-10 rounded-lg border-l-4 border-accent bg-surface-2 p-5">

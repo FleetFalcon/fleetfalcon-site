@@ -102,7 +102,8 @@ export default function HumanInTheLoopPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader motif="checkpoint" />
+        <PostHeader photo="truck-cab"
+                    alt="A truck already moving — the consequence that makes a human signature matter" />
 
         {/* Lead answer (AEO) */}
         <div className="mt-10 rounded-lg border-l-4 border-accent bg-surface-2 p-5">

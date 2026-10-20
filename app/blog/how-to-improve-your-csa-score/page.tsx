@@ -102,7 +102,8 @@ export default function CsaScorePostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader motif="chart" />
+        <PostHeader photo="highway"
+                    alt="A tanker on the interstate, accumulating the roadside inspections a CSA score is built from" />
 
         {/* Lead answer (AEO) */}
         <div className="mt-10 rounded-lg border-l-4 border-accent bg-surface-2 p-5">
