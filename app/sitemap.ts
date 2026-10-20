@@ -16,6 +16,8 @@ const routes: {
   // so they are real indexable destinations rather than home-page anchors.
   { path: "violation-radar", priority: 0.9, changeFrequency: "monthly" },
   { path: "english-testing", priority: 0.9, changeFrequency: "monthly" },
+  // Indexed on the site this replaces, so it keeps a real route (see next.config redirects).
+  { path: "contact", priority: 0.6, changeFrequency: "yearly" },
   { path: "blog", priority: 0.7, changeFrequency: "weekly" },
   { path: "blog/fleetfalcon-vs-alternatives", priority: 0.7, changeFrequency: "monthly" },
   { path: "blog/human-in-the-loop-compliance-ai", priority: 0.7, changeFrequency: "monthly" },

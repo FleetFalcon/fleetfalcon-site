@@ -17,7 +17,7 @@ const LINKS = [
   { label: "Pricing", href: "/pricing" },
   { label: "Blog", href: "/blog" },
   { label: "Mission", href: "/#mission" },
-  { label: "Contact", href: "mailto:val@fleetfalcon.io" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const APP_URL = "https://app.fleetfalcon.io/";

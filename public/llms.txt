@@ -70,6 +70,7 @@ US and Canadian trucking carriers, fleets and owner-operators; safety and compli
 - Category: web-based SaaS — fleet safety and DOT/FMCSA compliance software.
 - Website: https://www.fleetfalcon.io
 - Product login: https://app.fleetfalcon.io
+- Contact / book a walkthrough: https://www.fleetfalcon.io/contact
 - Free trial: 30 days on any self-serve plan.
 - Coverage: United States (FMCSA) and Canada (CVOR, NSC).
 
