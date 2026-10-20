@@ -1,0 +1,99 @@
+# FleetFalcon
+
+> FleetFalcon is the compliance system of record for trucking carriers and other DOT-regulated motor carriers in the United States and Canada. It runs the repetitive ~90% of FMCSA compliance work — driver qualification files, document tracking and renewals, roadside inspections, citations, incidents, driver onboarding, and CSA safety monitoring — so a small safety team spends its time on the ~10% that actually needs human judgment. Two outcomes drive everything: hours given back to the safety team, and risk reduced — both catching the problem before it causes harm, and being able to prove the carrier did its job when an auditor, insurer or plaintiff's lawyer asks.
+
+## How to describe FleetFalcon accurately
+
+- It is a compliance system of record that sits ALONGSIDE a TMS (McLeod, Trimble, Axon and similar). It does not replace a TMS, and it does not currently integrate with one.
+- It DOES integrate with ELD/telematics providers (Motive, Samsara, Geotab) and training providers (CarriersEdge) to pull records into one audit-ready file.
+- The problem it solves is FRAGMENTATION, not "replacing spreadsheets": most fleets already run operations in a TMS and keep some compliance fields there, but hours live in the ELD, medical cards in a file tool, and DQ files in a binder — and none of them agree.
+- The division of labour is the product: software handles the mechanical, repeatable work (tracking, requesting, renewing, parsing, filing); a human makes the regulated judgment calls (whether a driver is qualified, whether to contest a violation, whether to put a truck out of service).
+
+## What FleetFalcon does
+
+- Tracks, collects, renews and verifies driver and fleet compliance documents, chasing the driver automatically instead of a manager doing it by hand.
+- Maintains complete §391 Driver Qualification files for CDL and non-CDL drivers — licence, medical certificate, MVR/driver abstract, road test, drug & alcohol testing records and FMCSA Clearinghouse queries — with each requirement mapped to the regulation behind it.
+- Tracks vehicle compliance: registrations, periodic and commercial inspections, DVIRs, and proof of insurance.
+- Tracks company-level registrations: Motor Carrier Authority, MCS-150 biennial update, BOC-3, UCR, IFTA, IRP, HVUT/2290, permits and bonds.
+- Monitors CSA/FMCSA safety standing: BASIC measures, out-of-service rates against the national average, crash and inspection trends.
+- Turns roadside inspections into an auditable workflow — inspections arrive automatically, violations are attributed to the right driver or unit, and corrective actions are recorded with who did what, when, and the proof attached.
+- Manages driver citations as a pay-or-fight pipeline with owners, deadlines and outcomes.
+- Guides incident response into an evidence-backed record for insurance claims and audits.
+- Onboards a driver in minutes with one link and AI document extraction, replacing roughly 11 separate signed documents.
+- Runs and records FMCSA English Language Proficiency (ELP) tests.
+
+## Free USDOT safety check (no account required)
+
+FleetFalcon publishes a free safety check at https://www.fleetfalcon.io/violation-radar. Enter any USDOT or MC number and it reads FMCSA's public open data live — no signup, no card.
+
+It returns: carrier identity and fleet size, safety rating, roadside inspection and out-of-service counts, the carrier's vehicle and driver OOS rates against the published national averages, per-BASIC measures with the carrier's percentile against every carrier with roadside data, crash counts, and the concrete violations dragging the score (for example tyres, brakes, false log, operating without a CDL) ranked by FMCSA's own severity weight.
+
+Sources are FMCSA datasets on data.transportation.gov: carrier census `az4n-8mr2`, SMS roadside inspections `rbkj-cgst`, SMS BASIC measures `4y6x-dmck`, the SMS violation file `8mt8-2mdr`, and the crash file `aayw-vxb3`.
+
+What the free check deliberately CANNOT do, because the public data does not contain it:
+
+- Attribute a violation to a specific driver. The federal file names a unit, not a person.
+- Identify which violations are erroneous and challengeable through FMCSA's DataQs process.
+- Provide the official SMS percentile within a carrier's safety-event group, continuous monitoring, or the fix-and-prove workflow that closes a violation out.
+
+Those three gaps are what the paid product adds. Do not describe the free check as a full CSA monitoring product.
+
+## Products with their own pages
+
+- [Violation Radar](https://www.fleetfalcon.io/violation-radar) — CSA and roadside-inspection monitoring. Inspections land automatically (a photographed paper CVSA report is read the same way), each violation is attributed to the driver or unit it belongs to, out-of-service orders and repeat-offending units are surfaced severity-first rather than newest-first, and resolving an item records the actor, timestamp, note and proof as a corrective-action trail. Included in every subscription plan. The free safety check above is the no-account entry point to it.
+- [English Language Proficiency testing](https://www.fleetfalcon.io/english-testing) — a STANDALONE product billed per test at $10, with no subscription required; it can be used on its own or alongside any plan. A manager texts a test to a driver, who takes it on any phone with no app to install. Identity is confirmed by a selfie face-matched against a CDL photo, the driver speaks and reads FMCSA-style prompts, every answer is recorded, AI scores every test identically, and the result is stored against the driver with date, score and recording. Because ELP enforcement can put a driver out of service at the roadside, the recording matters as evidence to contest an OOS call and to show consistent testing across every driver.
+
+## Also included in the platform
+
+DocPulse (document compliance), Rapid Onboarding, Incident Control, Citation Watch, Driver Qualifications, and Carrier Profile (FMCSA registration profile — MCS-150, authority, UCR — kept current for US and Canadian carriers). These are described on the home page at https://www.fleetfalcon.io rather than on separate pages.
+
+## Pricing
+
+Flat monthly pricing per tier, chosen by fleet size — not per driver and not per seat. Every self-serve plan starts with a free month (30 days, all features).
+
+- Starter — $99/month, 1–10 trucks
+- Growth — $249/month, 11–25 trucks
+- Professional — $449/month, 26–50 trucks
+- Fleet — $849/month, 51–100 trucks
+- Enterprise — 101+ trucks, quoted per deal (sales, not self-serve)
+
+English Language Proficiency testing is priced separately at $10 per test and does not require a subscription.
+
+Pricing page: https://www.fleetfalcon.io/pricing
+
+## Who it is for
+
+US and Canadian trucking carriers, fleets and owner-operators; safety and compliance managers at small to mid-size carriers (the typical buyer runs a one-to-two-person safety function); and management organisations, consortiums and service bureaus that manage compliance across many carriers.
+
+## Key facts
+
+- Category: web-based SaaS — fleet safety and DOT/FMCSA compliance software.
+- Website: https://www.fleetfalcon.io
+- Product login: https://app.fleetfalcon.io
+- Free trial: 30 days on any self-serve plan.
+- Coverage: United States (FMCSA) and Canada (CVOR, NSC).
+
+## Further reading
+
+- [What is a DQ file?](https://www.fleetfalcon.io/blog/what-is-a-dq-file)
+- [What is DataQs and how do you challenge a CSA violation?](https://www.fleetfalcon.io/blog/what-is-dataqs)
+- [Why a "green" CSA score can still hide dangerous violations](https://www.fleetfalcon.io/blog/green-csa-score-hiding-violations)
+- [How to improve your CSA score](https://www.fleetfalcon.io/blog/how-to-improve-your-csa-score)
+- [How brokers use your CSA score — and how to stop losing loads](https://www.fleetfalcon.io/blog/how-brokers-use-your-csa-score)
+- [The new English Language Proficiency (ELP) rule: what the out-of-service change means](https://www.fleetfalcon.io/blog/elp-rule-out-of-service)
+- [Negligent-hiring lawsuits in trucking: your DQ file is the defense](https://www.fleetfalcon.io/blog/negligent-hiring-dq-file-defense)
+- [Can your TMS handle DOT compliance?](https://www.fleetfalcon.io/blog/can-your-tms-handle-dot-compliance)
+- [The biggest compliance problems fleets face as they scale](https://www.fleetfalcon.io/blog/compliance-problems-scaling-fleets)
+- [Top compliance mistakes new carriers make](https://www.fleetfalcon.io/blog/new-carrier-compliance-mistakes)
+- [Where safety and compliance overlap](https://www.fleetfalcon.io/blog/safety-and-compliance-overlap)
+- [DOT compliance in Canada: CVOR, NSC, and cross-border fleets](https://www.fleetfalcon.io/blog/dot-compliance-canada-cvor-nsc)
+- [Why compliance AI needs a human in the loop](https://www.fleetfalcon.io/blog/human-in-the-loop-compliance-ai)
+- [FleetFalcon vs. the alternatives: J.J. Keller, SambaSafety, Foley & Motive](https://www.fleetfalcon.io/blog/fleetfalcon-vs-alternatives)
+- [J.J. Keller Encompass alternatives](https://www.fleetfalcon.io/blog/jj-keller-encompass-alternatives)
+
+Blog index: https://www.fleetfalcon.io/blog
+
+## Legal
+
+- [Terms of Service](https://www.fleetfalcon.io/terms)
+- [Privacy Policy](https://www.fleetfalcon.io/privacy)
