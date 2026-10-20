@@ -12,11 +12,17 @@ import { HeroBand } from "./components/hero-band";
 import { problems, features, secondaryModules } from "./content";
 
 const HERO_CHECKS = ["Live in days", "No rip-and-replace", "Cancel anytime"];
-const INTEGRATIONS: { name: string; logo: string | null }[] = [
+// `box` overrides the default logo box for stacked lockups. Luma's mark sits above a
+// "brighter learning" tagline, so its artwork is ~2.3:1 where the others are 3.5-4.9:1 — in a
+// fixed-height box object-contain makes it height-constrained and it reads visibly smaller than
+// its neighbours. A taller, narrower box gives it the same optical weight without cropping
+// anyone's trademark down to the wordmark.
+const INTEGRATIONS: { name: string; logo: string | null; box?: string }[] = [
   { name: "Samsara", logo: null }, // TODO: real Samsara logo still needed
   { name: "Motive", logo: "/integrations/motive-v2.png" },
   { name: "Geotab", logo: "/integrations/geotab-v2.png" },
   { name: "CarriersEdge", logo: "/integrations/carriersedge-v2.png" },
+  { name: "Luma", logo: "/integrations/luma-v2.png", box: "h-10 w-20" },
 ];
 // First three modules become the big visual "beats"; the rest go in the compact grid.
 const BEATS = features.slice(0, 3);
@@ -156,7 +162,7 @@ export default function Home() {
                   className="flex h-12 items-center justify-center rounded-lg border border-border bg-white px-5"
                 >
                   {i.logo ? (
-                    <span className="relative block h-7 w-24">
+                    <span className={`relative block ${i.box ?? "h-7 w-24"}`}>
                       <Image
                         src={i.logo}
                         alt={`${i.name} logo`}
@@ -172,7 +178,7 @@ export default function Home() {
               ))}
             </div>
             <p className="mt-3 text-sm text-foreground-muted">
-              ELD telematics (Motive, Samsara, Geotab) and training (CarriersEdge) — and it sits
+              ELD telematics (Motive, Samsara, Geotab) and training (CarriersEdge, Luma) — and it sits
               alongside your TMS.
             </p>
           </div>
