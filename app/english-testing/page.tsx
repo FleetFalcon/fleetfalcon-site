@@ -105,9 +105,12 @@ export default function EnglishTestingPage() {
               </div>
             </div>
 
+            {/* The driver's own view, mid-test. The previous image here was the generic
+                driver-profile screenshot — documents and risk flags, nothing to do with ELP —
+                under alt text claiming it showed a test result. It did not. */}
             <Shot
-              src="/screenshots/driver-profile.png"
-              alt="An English Language Proficiency test result stored on a driver's FleetFalcon profile with score, date and recording"
+              src="/screenshots/elp-test-in-progress.png"
+              alt="A driver partway through an English Language Proficiency test on their phone: question 13 of 18, a recording indicator, a bill of lading to read aloud, and a button to hear the question again"
               priority
             />
           </div>
@@ -144,6 +147,12 @@ export default function EnglishTestingPage() {
           <h2 className="font-display max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
             A score nobody can challenge is worth more than a score
           </h2>
+          <div className="mt-8">
+            <Shot
+              src="/screenshots/elp-scored-answer.png"
+              alt="One scored answer from an ELP test: the question, the driver's recorded answer with playback, a Success result, and the explanation behind the score"
+            />
+          </div>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {[
               {
