@@ -81,6 +81,29 @@ export default function ViolationRadarPage() {
         </div>
       </section>
 
+      {/* 1.5 — THE PRODUCT ITSELF ------------------------------------------
+          Carrier name and USDOT are anonymised in this capture ("Northstar Carriers",
+          masked DOT). The demo this was shot from is seeded off one real carrier's FMCSA
+          export, and its identity has no business on a public marketing page. */}
+      <section className="border-b border-border bg-surface-2">
+        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:py-16">
+          <h2 className="mx-auto max-w-2xl text-center font-display text-3xl leading-tight tracking-tight sm:mx-0 sm:text-left sm:text-4xl">
+            Monday morning, ranked by what actually bites
+          </h2>
+          <p className="measure mx-auto mt-4 text-center text-lg leading-relaxed text-foreground-muted sm:mx-0 sm:text-left">
+            Severity first, not newest first. The driver who should not be in a truck sits at the
+            top; the paperwork waits its turn. Each row says what it costs you in CSA points and
+            what to do about it.
+          </p>
+          <div className="mt-8">
+            <Shot
+              src="/screenshots/violation-radar-pulse.png"
+              alt="Violation Radar's Pulse feed: critical items first — two out-of-service defects on one unit, a licence-restriction violation, a driver operating without a valid CDL — each with its CSA point cost and a one-click corrective action"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* 2 — WHAT THE PUBLIC DATA CANNOT TELL THEM (the honest gap = product) */}
       <section className="border-b border-border bg-surface">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
