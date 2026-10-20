@@ -231,20 +231,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4.5 — TESTIMONIAL (Guide / social proof) — INTENTIONALLY EMPTY ----
-          Removed before launch. What sat here was a fabricated endorsement: an invented
-          person ("Marcus Delgado"), an invented title, and a quote no customer ever said,
-          attributed to a real-sounding carrier. The previous note argued the company name
-          was safe because it is shared by 26+ carriers in the FMCSA census — but that only
-          addresses which company gets defamed, not the fact that the testimonial is false.
-          A made-up customer endorsement on a live commercial site is deceptive on its own
-          terms (and in the US, squarely what the FTC endorsement guidelines are about).
+      {/* 4.5 — TESTIMONIAL (Guide / social proof) -------------------------
+          Real customer quote, supplied by the founder. Attributed by ROLE and company rather
+          than by personal name, which is how it was given — honest, and common where a safety
+          director will stand behind the words but not put their own name on a vendor's page.
 
-          This renders nothing rather than showing a placeholder, because a visitor cannot
-          tell a placeholder from a claim. Restore the section with a REAL, signed-off quote:
-          named person, named carrier, their words, written permission on file. The proof
-          numbers in the hero (100+ fleets, 2,000+ drivers onboarded) carry this slot's job
-          until then. */}
+          Two things to keep true if this is ever edited: the words stay the customer's (the
+          only change made was removing a duplicated "for hours" typo from the transcription),
+          and written permission to publish it stays on file. Do not add a person's name, photo
+          or initials that were not given. */}
+      <section className="border-b border-border bg-surface-2">
+        <div className="mx-auto max-w-4xl px-5 py-16 text-center sm:px-8">
+          <p className="text-eyebrow text-accent">Safety teams on FleetFalcon</p>
+          <blockquote className="mt-5 font-display text-2xl leading-snug sm:text-3xl">
+            &ldquo;We&rsquo;ve been able to save hours for our team, and focus on what truly
+            matters &mdash; drivers instead of paperwork.&rdquo;
+          </blockquote>
+          <figcaption className="mt-6 text-sm">
+            <span className="block font-bold text-foreground">Safety Director</span>
+            <span className="block text-foreground-muted">Eagle Transport</span>
+          </figcaption>
+        </div>
+      </section>
+
 
       {/* 5 — FEATURES: 3 beats + compact grid ------------------------------ */}
       <section id="platform" className="scroll-mt-20 border-b border-border">
