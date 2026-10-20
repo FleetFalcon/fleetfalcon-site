@@ -57,19 +57,27 @@ export function HeroBand({ hasVideo }: { hasVideo: boolean }) {
           <video
             ref={videoRef}
             className="absolute inset-0 h-full w-full object-cover"
-            poster="/hero-falcon-truck.png"
+            // Poster is cut from this video's OWN first frame, not the separate falcon still:
+            // the two are different compositions, so posting the still would snap to a visibly
+            // different shot the moment playback starts.
+            poster="/hero-falcon-poster.jpg"
             muted
             loop
             playsInline
             preload="metadata"
             aria-hidden
           >
-            <source src="/hero-falcon-truck.webm" type="video/webm" />
+            {/* mp4 only. A VP9 webm of this footage encoded LARGER than the h264 (4.3MB vs
+                2.0MB) — all the motion blur and foliage detail — so a <source> for it would
+                just serve the heavier file to the browsers that prefer it. */}
             <source src="/hero-falcon-truck.mp4" type="video/mp4" />
           </video>
         ) : (
           <Image
-            src="/hero-falcon-truck.png"
+            // Same frame the video posts, so reduced-motion users see the identical shot
+            // rather than a different one. Falls back to the original still only when there
+            // is no video at all (hasVideo === false).
+            src={hasVideo ? "/hero-falcon-poster.jpg" : "/hero-falcon-truck.png"}
             alt=""
             fill
             priority
