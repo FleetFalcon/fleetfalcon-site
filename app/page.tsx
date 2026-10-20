@@ -231,30 +231,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4.5 — TESTIMONIAL (Guide / social proof) -------------------------- */}
-      {/* PLACEHOLDER quote — fictional, pending a real signed-off customer. The company name is
-          deliberately a VERY common one: "Eagle Transport" is shared by 26+ carriers across 22
-          states in the FMCSA census, so it identifies no single real entity. Do NOT swap in a
-          rare/unique carrier name (that pins a fake quote on a real company — legally dangerous). */}
-      <section className="border-b border-border bg-surface-2">
-        <div className="mx-auto max-w-4xl px-5 py-16 text-center sm:px-8">
-          <p className="text-eyebrow text-accent">Safety teams on FleetFalcon</p>
-          <blockquote className="mt-5 font-display text-2xl leading-snug sm:text-3xl">
-            &ldquo;Our TMS tracked the loads — it never chased a medical card. FleetFalcon flags
-            them weeks ahead, pulls our ELD and training into one record, and turns a roadside
-            violation into a documented fix instead of a surprise.&rdquo;
-          </blockquote>
-          <figcaption className="mt-6 flex items-center justify-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-bold text-accent-foreground">
-              MD
-            </span>
-            <span className="text-left text-sm">
-              <span className="block font-bold text-foreground">Marcus Delgado</span>
-              <span className="block text-foreground-muted">Director of Safety, Eagle Transport</span>
-            </span>
-          </figcaption>
-        </div>
-      </section>
+      {/* 4.5 — TESTIMONIAL (Guide / social proof) — INTENTIONALLY EMPTY ----
+          Removed before launch. What sat here was a fabricated endorsement: an invented
+          person ("Marcus Delgado"), an invented title, and a quote no customer ever said,
+          attributed to a real-sounding carrier. The previous note argued the company name
+          was safe because it is shared by 26+ carriers in the FMCSA census — but that only
+          addresses which company gets defamed, not the fact that the testimonial is false.
+          A made-up customer endorsement on a live commercial site is deceptive on its own
+          terms (and in the US, squarely what the FTC endorsement guidelines are about).
+
+          This renders nothing rather than showing a placeholder, because a visitor cannot
+          tell a placeholder from a claim. Restore the section with a REAL, signed-off quote:
+          named person, named carrier, their words, written permission on file. The proof
+          numbers in the hero (100+ fleets, 2,000+ drivers onboarded) carry this slot's job
+          until then. */}
 
       {/* 5 — FEATURES: 3 beats + compact grid ------------------------------ */}
       <section id="platform" className="scroll-mt-20 border-b border-border">
