@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BlogCta } from "../../components/blog-cta";
 import { ComparisonTable } from "../../components/comparison-table";
 import { JsonLd } from "../../components/json-ld";
+import { PostHeader } from "../../components/post-header";
 import { blogPosts } from "../../content";
 
 const post = blogPosts.find((p) => p.slug === "fleetfalcon-vs-alternatives")!;
@@ -101,6 +102,8 @@ export default function ComparisonPostPage() {
           </time>
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
+
+        <PostHeader motif="columns" />
 
         {/* Lead answer (AEO) */}
         <div className="mt-10 rounded-lg border-l-4 border-accent bg-surface-2 p-5">

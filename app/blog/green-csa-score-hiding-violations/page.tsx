@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BlogCta } from "../../components/blog-cta";
 import { JsonLd } from "../../components/json-ld";
+import { PostHeader } from "../../components/post-header";
 import { blogPosts } from "../../content";
 
 const post = blogPosts.find((p) => p.slug === "green-csa-score-hiding-violations")!;
@@ -99,6 +100,9 @@ export default function GreenScorePostPage() {
           </time>
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
+
+        <PostHeader motif="chart" image="/screenshots/violation-radar-pulse.png"
+                    alt="Violation Radar's feed, ranking a fleet's violations by severity rather than by date" />
 
         {/* Lead answer (AEO) */}
         <div className="mt-10 rounded-lg border-l-4 border-accent bg-surface-2 p-5">

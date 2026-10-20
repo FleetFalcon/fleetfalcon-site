@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BlogCta } from "../../components/blog-cta";
 import { JsonLd } from "../../components/json-ld";
+import { PostHeader } from "../../components/post-header";
 import { blogPosts } from "../../content";
 
 const post = blogPosts.find((p) => p.slug === "how-brokers-use-your-csa-score")!;
@@ -99,6 +100,8 @@ export default function BrokersPostPage() {
           </time>
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
+
+        <PostHeader motif="network" />
 
         {/* Lead answer (AEO) */}
         <div className="mt-10 rounded-lg border-l-4 border-accent bg-surface-2 p-5">
