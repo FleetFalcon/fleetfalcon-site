@@ -94,10 +94,13 @@ export function HeroBand({ hasVideo }: { hasVideo: boolean }) {
 
         <div className="absolute inset-x-0 bottom-0">
           <div className="mx-auto max-w-7xl px-5 pb-8 sm:px-8 sm:pb-10">
-            <p className="max-w-2xl font-display text-2xl leading-tight text-white drop-shadow-sm sm:text-3xl lg:text-4xl">
+            {/* Centred on mobile to match the hero directly below it; anchored left from
+                `sm` up, where the band is wide enough that left-anchored text reads as
+                deliberate rather than adrift. */}
+            <p className="mx-auto max-w-2xl text-center font-display text-2xl leading-tight text-white drop-shadow-sm sm:mx-0 sm:text-left sm:text-3xl lg:text-4xl">
               Compliance that flies with you.
             </p>
-            <p className="mt-2 max-w-xl text-sm font-medium text-white/80 sm:text-base">
+            <p className="mx-auto mt-2 max-w-xl text-center text-sm font-medium text-white/80 sm:mx-0 sm:text-left sm:text-base">
               Every driver qualified. Every file audit-ready. Every mile.
             </p>
           </div>

@@ -57,8 +57,13 @@ export default function Home() {
       {/* 1 — HERO (TPC pattern) -------------------------------------------- */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 pb-16 pt-10 sm:px-8 lg:pb-20 lg:pt-14">
-          {/* proof bar */}
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+          {/* proof bar.
+              Centred below `sm` only. On a 390px screen a left-ragged stack of short stats,
+              a headline and two buttons reads as drifting off the left edge — the complaint
+              this fixes. FleetMule and Samsara both centre their entire mobile hero; Motive
+              keeps it left but pairs it with full-width CTAs. Ours already has full-width
+              CTAs AND left text, which is the one combination none of them use. */}
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center sm:justify-start sm:text-left">
             {[
               ["100+", "fleets"],
               ["2,000+", "drivers onboarded"],
@@ -72,13 +77,13 @@ export default function Home() {
           </div>
 
           <div className="mt-10 grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-            <div>
+            <div className="text-center sm:text-left">
               <h1 className="font-display text-5xl leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
                 Protect your drivers.
                 <br />
                 And your <span className="text-accent">contracts</span>.
               </h1>
-              <p className="mt-6 max-w-lg text-lg leading-relaxed text-foreground-muted">
+              <p className="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-foreground-muted sm:mx-0">
                 FleetFalcon runs the repetitive 90% of DOT compliance on autopilot, so your safety
                 team gets back to coaching drivers — before a missed file turns into a lawsuit or a
                 lost broker contract.
@@ -100,12 +105,12 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-accent-faint px-3 py-1">
+              <div className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-full bg-accent-faint px-3 py-1">
                 <Sparkles className="h-4 w-4 text-accent" aria-hidden />
                 <span className="text-sm font-bold text-accent">1 month free · all features</span>
               </div>
 
-              <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2">
+              <ul className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 sm:justify-start">
                 {HERO_CHECKS.map((c) => (
                   <li key={c} className="flex items-center gap-2 text-sm font-semibold text-foreground">
                     <Check className="h-4 w-4 text-success" strokeWidth={3} aria-hidden />
@@ -124,7 +129,7 @@ export default function Home() {
                 alt="FleetFalcon compliance dashboard showing driver and vehicle status, expiring documents, and open work items"
                 priority
               />
-              <div className="lift absolute -bottom-5 -left-3 rounded-xl bg-accent-strong px-5 py-4 text-accent-foreground shadow-xl sm:-left-5">
+              <div className="lift absolute -bottom-5 left-1/2 -translate-x-1/2 rounded-xl bg-accent-strong px-5 py-4 text-center text-accent-foreground shadow-xl sm:-left-5 sm:translate-x-0 sm:text-left">
                 <p className="text-data font-mono text-3xl font-bold leading-none">2,000+</p>
                 <p className="mt-1.5 text-sm font-semibold leading-tight">
                   drivers onboarded
@@ -141,7 +146,7 @@ export default function Home() {
       <section id="integrations" className="scroll-mt-24 border-b border-border bg-surface-2">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 py-14 sm:px-8 md:grid-cols-[1.2fr_1fr] md:items-center">
           <div>
-            <p className="text-eyebrow text-accent">One record, not five logins</p>
+            <p className="text-center text-eyebrow text-accent sm:text-left">One record, not five logins</p>
             <h2 className="mt-2 font-display text-2xl leading-tight sm:text-3xl">
               Your compliance is scattered across systems that were never built to talk.
             </h2>
@@ -188,7 +193,7 @@ export default function Home() {
       {/* 3 — PROBLEM (tight) + stakes one-liner ---------------------------- */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
-          <h2 className="font-display max-w-2xl text-3xl leading-tight sm:text-4xl">
+          <h2 className="mx-auto max-w-2xl text-center font-display text-3xl leading-tight sm:mx-0 sm:text-left sm:text-4xl">
             Compliance shouldn&apos;t feel like this
           </h2>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -242,7 +247,7 @@ export default function Home() {
           or initials that were not given. */}
       <section className="border-b border-border bg-surface-2">
         <div className="mx-auto max-w-4xl px-5 py-16 text-center sm:px-8">
-          <p className="text-eyebrow text-accent">Safety teams on FleetFalcon</p>
+          <p className="text-center text-eyebrow text-accent sm:text-left">Safety teams on FleetFalcon</p>
           <blockquote className="mt-5 font-display text-2xl leading-snug sm:text-3xl">
             &ldquo;We&rsquo;ve been able to save hours for our team, and focus on what truly
             matters &mdash; drivers instead of paperwork.&rdquo;
@@ -258,7 +263,7 @@ export default function Home() {
       {/* 5 — FEATURES: 3 beats + compact grid ------------------------------ */}
       <section id="platform" className="scroll-mt-20 border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
-          <h2 className="font-display max-w-2xl text-3xl leading-tight sm:text-4xl">
+          <h2 className="mx-auto max-w-2xl text-center font-display text-3xl leading-tight sm:mx-0 sm:text-left sm:text-4xl">
             One platform for the whole compliance stack
           </h2>
 
@@ -313,7 +318,7 @@ export default function Home() {
       {/* 5.5 — HOW IT WORKS: the Plan (3 steps) ---------------------------- */}
       <section id="how-it-works" className="scroll-mt-24 border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
-          <h2 className="font-display max-w-2xl text-3xl leading-tight sm:text-4xl">
+          <h2 className="mx-auto max-w-2xl text-center font-display text-3xl leading-tight sm:mx-0 sm:text-left sm:text-4xl">
             Up and running in three steps
           </h2>
           <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-foreground-muted">
@@ -336,7 +341,7 @@ export default function Home() {
       {/* 6 — FREE SAFETY CHECK (compact) ----------------------------------- */}
       <section id="safety-check" className="scroll-mt-20 border-b border-border bg-surface-2">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center sm:px-8">
-          <h2 className="font-display text-3xl leading-tight sm:text-4xl">
+          <h2 className="text-center font-display text-3xl leading-tight sm:text-left sm:text-4xl">
             See what a green score is hiding
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-foreground-muted">
@@ -354,7 +359,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="font-display text-3xl leading-tight sm:text-4xl">
+              <h2 className="text-center font-display text-3xl leading-tight sm:text-left sm:text-4xl">
                 Flat monthly. No per-driver math.
               </h2>
               <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-foreground-muted">
@@ -421,7 +426,7 @@ export default function Home() {
       {/* 9 — FAQ ----------------------------------------------------------- */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
-          <h2 className="font-display text-3xl leading-tight sm:text-4xl">
+          <h2 className="text-center font-display text-3xl leading-tight sm:text-left sm:text-4xl">
             Frequently asked questions
           </h2>
           <div className="mt-8">
