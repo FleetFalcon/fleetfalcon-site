@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BlogCta } from "../../components/blog-cta";
 import { JsonLd } from "../../components/json-ld";
+import { PostHeader } from "../../components/post-header";
 import { blogPosts } from "../../content";
 
 const post = blogPosts.find((p) => p.slug === "safety-and-compliance-overlap")!;
@@ -100,6 +101,9 @@ export default function SafetyComplianceOverlapPostPage() {
           </time>
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
+
+        <PostHeader photo="delivery-truck"
+                    alt="Trucks in service, where the safety job and the compliance job stop being separable" />
 
         {/* Lead answer (AEO) */}
         <div className="mt-10 rounded-lg border-l-4 border-accent bg-surface-2 p-5">

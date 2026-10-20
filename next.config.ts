@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
       // (same destination the live lp-fleetfalcon site uses).
       {
         source: "/demo",
-        destination: "https://calendar.app.google/dgdaybcBiwWUDThQ6",
+        destination: "https://calendar.app.google/HowUGwBEMzhLxXMi8",
         permanent: false,
       },
 

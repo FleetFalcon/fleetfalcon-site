@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BlogCta } from "../../components/blog-cta";
 import { JsonLd } from "../../components/json-ld";
+import { PostHeader } from "../../components/post-header";
 import { blogPosts } from "../../content";
 
 const post = blogPosts.find((p) => p.slug === "compliance-problems-scaling-fleets")!;
@@ -100,6 +101,9 @@ export default function ScalingFleetsPostPage() {
           </time>
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
+
+        <PostHeader photo="semi-trucks"
+                    alt="A fleet large enough that the paperwork no longer fits in one person's head" />
 
         {/* Lead answer (AEO) */}
         <div className="mt-10 rounded-lg border-l-4 border-accent bg-surface-2 p-5">
