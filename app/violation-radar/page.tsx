@@ -143,34 +143,31 @@ export default function ViolationRadarPage() {
       {/* 3 — HOW IT WORKS --------------------------------------------------- */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
-          <div className="grid items-start gap-12 lg:grid-cols-[0.95fr_1.05fr]">
-            <div>
-              <h2 className="font-display text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
-                Inspection in. Corrective action out.
-              </h2>
-              <p className="measure mt-4 text-lg leading-relaxed text-foreground-muted">
-                Violation Radar runs inside FleetFalcon, so a roadside event becomes a tracked,
-                closed-out record instead of a PDF in someone&apos;s inbox.
-              </p>
-              <ul className="mt-8 space-y-6">
-                {STEPS.map(({ icon: Icon, title, body }) => (
-                  <li key={title} className="flex gap-4">
-                    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent-faint text-accent">
-                      <Icon className="h-5 w-5" aria-hidden />
-                    </span>
-                    <div>
-                      <h3 className="font-semibold">{title}</h3>
-                      <p className="mt-1 text-sm leading-relaxed text-foreground-muted">{body}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <Shot
-              src="/screenshots/roadside-parse.png"
-              alt="Violation Radar showing a parsed roadside inspection with violations attributed to a driver and unit"
-            />
+          <div>
+            <h2 className="font-display text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+              Inspection in. Corrective action out.
+            </h2>
+            <p className="measure mt-4 text-lg leading-relaxed text-foreground-muted">
+              Violation Radar runs inside FleetFalcon, so a roadside event becomes a tracked,
+              closed-out record instead of a PDF in someone&apos;s inbox.
+            </p>
+            {/* Steps run two-up now that this section carries no image. What sat here was the
+                portal's "Add Roadside Inspection" form — the wrong screen for this page twice
+                over: it is manual data entry, shown beside copy promising inspections arrive
+                without re-keying. The Pulse screenshot further up already shows the product. */}
+            <ul className="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-2">
+              {STEPS.map(({ icon: Icon, title, body }) => (
+                <li key={title} className="flex gap-4">
+                  <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent-faint text-accent">
+                    <Icon className="h-5 w-5" aria-hidden />
+                  </span>
+                  <div>
+                    <h3 className="font-semibold">{title}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-foreground-muted">{body}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
