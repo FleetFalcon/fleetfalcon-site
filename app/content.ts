@@ -334,7 +334,7 @@ export const pricingTiers: PricingTier[] = [
   { code: "Growth", name: "Growth", trucks: "11–25 trucks", price: "$249", priceNum: 249, selfServe: true, featured: true, blurb: "Growing fleets." },
   { code: "Professional", name: "Professional", trucks: "26–50 trucks", price: "$449", priceNum: 449, selfServe: true, blurb: "Established mid-size fleets." },
   { code: "Fleet", name: "Fleet", trucks: "51–100 trucks", price: "$849", priceNum: 849, selfServe: true, blurb: "Large fleets." },
-  { code: "Enterprise", name: "Enterprise", trucks: "101+ trucks", price: "Custom", selfServe: false, blurb: "Multi-entity carriers & consortiums." },
+  { code: "Enterprise", name: "Enterprise", trucks: "101+ trucks", price: "Custom", selfServe: false, blurb: "The largest fleets, multi-entity carriers & consortiums." },
 ];
 
 // Identical on EVERY plan, Starter through Enterprise. You don't lose features by paying less —
