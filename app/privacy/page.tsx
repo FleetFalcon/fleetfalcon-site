@@ -48,9 +48,9 @@ export default function PrivacyPage() {
               to manage its compliance program, the Customer is the controller (or, under U.S. state
               law, the &quot;business&quot;) that determines why and how the data is processed.
               FleetFalcon processes that data only to provide the Services and only on the Customer&apos;s
-              documented instructions, as a processor (or &quot;service provider&quot;). Our handling of
-              that data is governed by our Data Processing Addendum (&quot;DPA&quot;), which forms part
-              of our agreement with each Customer.
+              documented instructions, as a processor (or &quot;service provider&quot;). Where a data
+              processing addendum has been signed with a Customer, it governs our handling of that
+              data and prevails over this Policy.
             </>,
             <>
               <strong className="font-semibold text-foreground">As a controller.</strong> For a limited
@@ -62,9 +62,10 @@ export default function PrivacyPage() {
           ]}
         />
         <p>
-          Where we act as a processor, this Policy is informational; the Customer&apos;s own privacy
-          notices and our DPA control. If there is a conflict between this Policy and a signed DPA or
-          master agreement with a Customer, that agreement governs for the data processed under it.
+          Where we act as a processor, this Policy is informational and the Customer&apos;s own privacy
+          notices control. If there is a conflict between this Policy and a signed data processing
+          addendum or master agreement with a Customer, that agreement governs for the data processed
+          under it.
         </p>
       </LegalSection>
 
@@ -271,7 +272,7 @@ export default function PrivacyPage() {
         />
         <p>
           We maintain a current list of sub-processors and will provide notice of material changes to
-          Customers as required by our DPA. We may also disclose data to comply with law, respond to
+          Customers as required by any signed data processing addendum. We may also disclose data to comply with law, respond to
           lawful requests, or protect the rights, safety, and security of FleetFalcon, our Customers, or
           the public, and in connection with a merger, acquisition, or sale of assets (subject to this
           Policy).
@@ -282,8 +283,7 @@ export default function PrivacyPage() {
         <p>
           FleetFalcon does not sell personal data and does not &quot;share&quot; it for cross-context
           behavioral advertising, as those terms are defined under the California Consumer Privacy Act
-          as amended by the CPRA. We honor opt-out preference signals, including the Global Privacy
-          Control (GPC), where legally required.
+          as amended by the CPRA.
         </p>
         <p>
           The Site uses cookies and similar technologies, including Google Analytics, to understand how
@@ -318,9 +318,9 @@ export default function PrivacyPage() {
       <LegalSection heading="11. Data Security">
         <p>
           We maintain administrative, technical, and organizational safeguards designed to protect
-          personal data, including encryption in transit and at rest, role-based access controls, least-
-          privilege access, and monitoring. No system is perfectly secure, but we work to protect data
-          consistent with its sensitivity and applicable law.
+          personal data, including encryption in transit and at rest and role-based access controls.
+          No system is perfectly secure, but we work to protect data consistent with its sensitivity
+          and applicable law.
         </p>
       </LegalSection>
 
@@ -340,7 +340,7 @@ export default function PrivacyPage() {
           relationship is with that Customer, which controls the data. Please direct access, correction,
           or deletion requests to the Customer (your employer or prospective employer). If you contact us
           directly, we will, where appropriate, refer your request to the relevant Customer and support
-          the Customer in responding, consistent with our DPA and applicable law. We generally cannot
+          the Customer in responding, consistent with any signed data processing addendum and applicable law. We generally cannot
           delete or alter a driver&apos;s compliance records without the controlling Customer&apos;s
           instruction, and some records are subject to the mandatory retention periods in Section 10.
         </p>
