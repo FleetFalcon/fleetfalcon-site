@@ -78,7 +78,7 @@ export default function EnglishTestingPage() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
                   href={ELP_SIGNUP}
-                  className="lift inline-flex items-center justify-center gap-2 rounded-lg bg-accent-strong px-7 py-4 text-base font-bold text-accent-foreground shadow-sm hover:shadow-lg"
+                  className="lift inline-flex items-center justify-center gap-2 rounded-lg border-2 border-transparent bg-accent-strong px-7 py-4 text-base font-bold text-accent-foreground shadow-sm hover:shadow-lg"
                 >
                   Start testing drivers
                   <ArrowRight className="h-5 w-5" />
@@ -195,7 +195,7 @@ export default function EnglishTestingPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
                 href={ELP_SIGNUP}
-                className="lift inline-flex items-center justify-center gap-2 rounded-lg bg-accent-strong px-7 py-4 text-base font-bold text-accent-foreground shadow-sm hover:shadow-lg"
+                className="lift inline-flex items-center justify-center gap-2 rounded-lg border-2 border-transparent bg-accent-strong px-7 py-4 text-base font-bold text-accent-foreground shadow-sm hover:shadow-lg"
               >
                 Start testing drivers
                 <ArrowRight className="h-5 w-5" />

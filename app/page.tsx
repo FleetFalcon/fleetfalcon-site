@@ -92,7 +92,7 @@ export default function Home() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Link
                   href="/pricing"
-                  className="lift inline-flex items-center justify-center gap-2 rounded-lg bg-accent-strong px-7 py-4 text-base font-bold text-accent-foreground shadow-sm hover:shadow-lg"
+                  className="lift inline-flex items-center justify-center gap-2 rounded-lg border-2 border-transparent bg-accent-strong px-7 py-4 text-base font-bold text-accent-foreground shadow-sm hover:shadow-lg"
                 >
                   Start your free month
                   <ArrowRight className="h-5 w-5" />
@@ -408,7 +408,7 @@ export default function Home() {
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/pricing"
-              className="lift inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent-strong px-7 py-4 text-base font-bold text-accent-foreground shadow-sm hover:shadow-lg sm:w-auto"
+              className="lift inline-flex w-full items-center justify-center gap-2 rounded-lg border-2 border-transparent bg-accent-strong px-7 py-4 text-base font-bold text-accent-foreground shadow-sm hover:shadow-lg sm:w-auto"
             >
               Start your free month
               <ArrowRight className="h-5 w-5" />
