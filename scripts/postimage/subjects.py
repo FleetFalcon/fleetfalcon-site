@@ -17,8 +17,13 @@ it routes straight to generation instead of to a search that would return a truc
 """
 from __future__ import annotations
 
-# Matched against the lowercased title and description, longest phrase first so that
-# "driver qualification file" wins over the bare "driver".
+# Matched in order against the lowercased title and description, so **the order is the
+# priority**: named regulatory terms first, generic trucking vocabulary last.
+#
+# This is a hand-ordering and it has to be, because the right precedence is specificity and
+# nothing measurable stands in for it. Sorting by phrase length was tried and is worse —
+# "violation" is longer than "dataqs", so the DataQs post got a photograph of a brake drum.
+# A post naming a specific rule is about that rule, even when it also says "violation".
 LEXICON: list[tuple[str, str]] = [
     ("driver qualification file", "employee personnel file folder documents desk"),
     ("negligent hiring", "courtroom gavel legal documents"),
@@ -27,9 +32,10 @@ LEXICON: list[tuple[str, str]] = [
     ("elp rule", "truck driver talking to inspector roadside"),
     ("out of service", "commercial truck stopped roadside inspection"),
     ("roadside inspection", "dot officer inspecting semi truck roadside"),
+    ("dataqs", "person reviewing paperwork magnifying glass desk"),
+    ("clearinghouse", "database server records archive"),
     ("csa score", "truck safety inspection clipboard mechanic"),
     ("violation", "truck brake wheel inspection mechanic hands"),
-    ("dataqs", "person reviewing paperwork magnifying glass desk"),
     ("audit", "accountant desk documents review office"),
     ("broker", "freight dispatch office computer logistics"),
     ("scaling", "large truck fleet parking lot aerial"),
@@ -37,7 +43,6 @@ LEXICON: list[tuple[str, str]] = [
     ("eld", "truck dashboard electronic device cab"),
     ("mvr", "driving record document paperwork desk"),
     ("drug and alcohol", "laboratory sample testing clinical"),
-    ("clearinghouse", "database server records archive"),
     ("canada", "canadian highway trucking winter road"),
     ("new carrier", "small trucking business owner van"),
     ("maintenance", "truck mechanic workshop repair garage"),

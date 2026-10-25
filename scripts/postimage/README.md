@@ -36,6 +36,16 @@ comparison.
 The search path is kept anyway: it costs nothing, it will occasionally find something genuinely
 good, and it is the part that would start working if a paid library were added.
 
+## Where the key comes from
+
+`OPENROUTER_API_KEY` from the environment, then `.env.local`, then **AWS Secrets Manager** —
+`/fleetfalcon/<env>/secrets`, key `openrouter`, the same blob `backend/Services/SecretsService.cs`
+reads. Nothing needs copying into a second file. The AWS credentials come from the environment
+(`AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY`) or from the backend's own
+`appsettings.Development.json`, found via `FLEETFALCON_BACKEND_CONFIG`.
+
+Needs `pip install boto3` for that path. Without it the search half still runs.
+
 ## If you want real photographs
 
 **Pexels and Pixabay both issue free API keys**, both permit commercial use with no attribution,

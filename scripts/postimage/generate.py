@@ -27,6 +27,8 @@ import os
 import pathlib
 import urllib.request
 
+from secrets_lookup import lookup
+
 API = "https://openrouter.ai/api/v1/chat/completions"
 
 # Google's image model via OpenRouter. Chosen because FleetFalcon already routes through
@@ -38,35 +40,52 @@ STYLE = (
     "Editorial photograph for a trucking-compliance article. Natural daylight, realistic depth "
     "of field, muted colour, documentary rather than advertising. Shot on a 35mm lens. "
     "No text, no signage, no logos, no brand marks, no readable documents, no identifiable faces. "
-    "Wide 16:9 composition with room at the top for a headline."
+    # "Room at the top for a headline" was taken literally and came back as a white band across
+    # the upper fifth of the frame. The site overlays its own headline; the photograph should
+    # simply fill the frame.
+    "Wide 16:9, the scene filling the frame edge to edge with no blank margins or borders."
 )
 
 
 def api_key() -> str | None:
-    key = os.environ.get("OPENROUTER_API_KEY", "").strip()
-    if key:
-        return key
-    env = pathlib.Path(__file__).resolve().parent.parent.parent / ".env.local"
-    if env.exists():
-        for line in env.read_text().splitlines():
-            if line.startswith("OPENROUTER_API_KEY="):
-                return line.split("=", 1)[1].strip().strip('"').strip("'")
-    return None
+    """The OpenRouter key — environment, then .env.local, then AWS Secrets Manager."""
+    return lookup("OPENROUTER_API_KEY", "openrouter")
 
 
-def prompt_for(title: str, subject: str | None) -> str:
+# Framings that distinguish two posts sharing one subject. Picked by a hash of the slug so the
+# choice is stable: regenerating one post does not reshuffle the others.
+ANGLES = [
+    "close on the hands and the work, shallow focus",
+    "wider, showing the surrounding workspace",
+    "over the shoulder, the subject at three-quarters",
+    "low angle, early morning light",
+    "from across the room, the subject small in the frame",
+]
+
+
+def prompt_for(title: str, subject: str | None, slug: str = "") -> str:
     """
     What to draw.
 
     The subject from the lexicon when there is one, the title when there is not — a post with no
     photographic subject still has a topic, and the model can work from it where a search engine
     could not.
+
+    The lexicon maps several posts onto one subject, which is correct — three articles about CSA
+    scores are about the same thing — but three near-identical headers is the tell that nobody
+    chose them. So the framing varies by slug, and the title is handed to the model as context
+    so it can pick its own details.
     """
     scene = subject or f"a scene that could illustrate an article titled '{title}'"
-    return f"{scene}. {STYLE}"
+    angle = ANGLES[sum(map(ord, slug)) % len(ANGLES)] if slug else ANGLES[0]
+    return (
+        f"{scene}. {angle}. "
+        f"The photograph accompanies an article titled '{title}' — let that steer the details. "
+        f"{STYLE}"
+    )
 
 
-def generate(title: str, subject: str | None, dest: pathlib.Path) -> bool:
+def generate(title: str, subject: str | None, dest: pathlib.Path, slug: str = "") -> bool:
     """
     One image, written to `dest`. False when the model is unavailable or returns nothing.
 
@@ -80,7 +99,7 @@ def generate(title: str, subject: str | None, dest: pathlib.Path) -> bool:
 
     body = json.dumps({
         "model": MODEL,
-        "messages": [{"role": "user", "content": prompt_for(title, subject)}],
+        "messages": [{"role": "user", "content": prompt_for(title, subject, slug)}],
         "modalities": ["image", "text"],
     }).encode()
 

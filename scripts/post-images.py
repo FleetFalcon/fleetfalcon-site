@@ -72,14 +72,26 @@ def posts() -> list[dict]:
 
 
 def existing() -> dict:
+    """
+    What has already been chosen, read back out of the generated file.
+
+    The trailing `as const` matters: the first version of this matched `= {...};` and the file
+    ends `} as const;`, so the pattern never matched and the function silently returned nothing.
+    Every run then believed no post had an image — which meant `--check` failed with all fifteen
+    present, and an unforced run would have regenerated all fifteen and paid for them again.
+    A parser that returns empty on a mismatch has to be read carefully for exactly this reason.
+    """
     if not OUT_TS.exists():
         return {}
-    m = re.search(r"=\s*(\{.*\})\s*;", OUT_TS.read_text(), re.S)
+    text = OUT_TS.read_text()
+    m = re.search(r"postImages:\s*Record<[^>]*>\s*=\s*(\{.*?\})\s*(?:as const)?\s*;\s*$",
+                  text, re.S)
     if not m:
         return {}
     try:
         return json.loads(m.group(1))
-    except json.JSONDecodeError:
+    except json.JSONDecodeError as e:
+        print(f"  warning: could not read {OUT_TS.name} ({e}); treating it as empty")
         return {}
 
 
@@ -143,10 +155,26 @@ def main() -> int:
               "searching only, gaps will be left unfilled.\n")
 
     if args.check:
-        missing = [p["slug"] for p in all_posts if p["slug"] not in have]
-        for slug in missing:
-            print(f"  no header image: {slug}")
-        print(f"{len(all_posts) - len(missing)}/{len(all_posts)} posts have a header image")
+        # Both halves, because they drift apart: the manifest can name a file that was deleted,
+        # and a file can sit in public/blog with nothing pointing at it. Checking only the
+        # manifest reported fifteen of fifteen while five images were missing from disk.
+        missing, orphaned = [], []
+        for p in all_posts:
+            slug = p["slug"]
+            entry = have.get(slug)
+            if not entry:
+                missing.append(f"{slug}: not in the manifest")
+            elif not (ROOT / "public" / entry["file"].lstrip("/")).exists():
+                missing.append(f"{slug}: manifest names {entry['file']}, which is not on disk")
+        for f in sorted(IMAGES.glob("*.jpg")):
+            if not any(e["file"].endswith(f.name) for e in have.values()):
+                orphaned.append(f.name)
+        for m in missing:
+            print(f"  {m}")
+        for o in orphaned:
+            print(f"  unused image on disk: {o}")
+        print(f"{len(all_posts) - len(missing)}/{len(all_posts)} posts have a header image"
+              + (f" · {len(orphaned)} unused" if orphaned else ""))
         return 1 if missing else 0
 
     used = {e["source"] for e in have.values()}
@@ -154,7 +182,8 @@ def main() -> int:
 
     for p in all_posts:
         slug, title = p["slug"], p["title"]
-        if slug in have and not args.force:
+        on_disk = slug in have and (ROOT / "public" / have[slug]["file"].lstrip("/")).exists()
+        if on_disk and not args.force:
             skipped += 1
             continue
 
@@ -163,7 +192,7 @@ def main() -> int:
             print(f"  {slug:<42} no photographic subject → generate")
             if args.generate and not args.dry:
                 dest = IMAGES / f"{slug}.jpg"
-                if generate(title, None, dest):
+                if generate(title, None, dest, slug):
                     generated += 1
                     have[slug] = {
                         "file": f"/blog/{slug}.jpg", "alt": title, "origin": "generated",
@@ -180,7 +209,7 @@ def main() -> int:
             print(f"  {slug:<42} {len(cands):>2} candidates, none usable → generate")
             if args.generate and not args.dry:
                 dest = IMAGES / f"{slug}.jpg"
-                if generate(title, query, dest):
+                if generate(title, query, dest, slug):
                     generated += 1
                     have[slug] = {
                         "file": f"/blog/{slug}.jpg", "alt": query, "origin": "generated",
