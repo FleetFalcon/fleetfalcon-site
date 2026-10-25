@@ -102,7 +102,7 @@ export default function HumanInTheLoopPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader photo="truck-cab"
+        <PostHeader slug="human-in-the-loop-compliance-ai"
                     alt="A truck already moving — the consequence that makes a human signature matter" />
 
         {/* Lead answer (AEO) */}

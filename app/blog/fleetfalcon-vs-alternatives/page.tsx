@@ -103,7 +103,7 @@ export default function ComparisonPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader photo="highway"
+        <PostHeader slug="fleetfalcon-vs-alternatives"
                     alt="The road every DOT-compliance vendor claims to keep you legal on" />
 
         {/* Lead answer (AEO) */}

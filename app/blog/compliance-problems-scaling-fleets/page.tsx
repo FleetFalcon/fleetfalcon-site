@@ -102,7 +102,7 @@ export default function ScalingFleetsPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader photo="semi-trucks"
+        <PostHeader slug="compliance-problems-scaling-fleets"
                     alt="A fleet large enough that the paperwork no longer fits in one person's head" />
 
         {/* Lead answer (AEO) */}

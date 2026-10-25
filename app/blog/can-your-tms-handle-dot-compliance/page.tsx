@@ -101,7 +101,7 @@ export default function TmsPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader photo="container-truck"
+        <PostHeader slug="can-your-tms-handle-dot-compliance"
                     alt="The load your TMS tracks — and the compliance obligation it does not" />
 
         {/* Lead answer (AEO) */}

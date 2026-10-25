@@ -101,7 +101,7 @@ export default function ElpPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader motif="waveform" image="/screenshots/elp-test-in-progress.png"
+        <PostHeader image="/screenshots/elp-test-in-progress.png"
                     alt="A driver partway through an English Language Proficiency test on their phone" />
 
         {/* Lead answer (AEO) */}

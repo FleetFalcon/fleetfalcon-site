@@ -101,7 +101,7 @@ export default function BrokersPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader photo="warehouse"
+        <PostHeader slug="how-brokers-use-your-csa-score"
                     alt="Palletised freight waiting on a carrier a broker picked partly on its CSA score" />
 
         {/* Lead answer (AEO) */}
