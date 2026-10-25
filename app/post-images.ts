@@ -133,6 +133,15 @@ export const postImages: Record<string, PostImage> = {
     "origin": "generated",
     "source": ""
   },
+  "violations-that-score-zero": {
+    "alt": "police officer writing ticket beside truck roadside",
+    "artist": "FleetFalcon",
+    "attribute": false,
+    "file": "/blog/violations-that-score-zero.jpg",
+    "license": "Generated image",
+    "origin": "generated",
+    "source": ""
+  },
   "what-is-a-dq-file": {
     "alt": "employee personnel file folder documents desk",
     "artist": "FleetFalcon",

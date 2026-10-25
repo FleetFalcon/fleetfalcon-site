@@ -33,6 +33,13 @@ LEXICON: list[tuple[str, str]] = [
     ("out of service", "commercial truck stopped roadside inspection"),
     ("roadside inspection", "dot officer inspecting semi truck roadside"),
     ("dataqs", "person reviewing paperwork magnifying glass desk"),
+    # Enforcement vocabulary. Absent at first, so a post about citations and speeding matched
+    # the generic "violation" and was handed a mechanic at a wheel hub.
+    ("citation", "police officer writing ticket beside truck roadside"),
+    ("ticket", "police officer writing ticket beside truck roadside"),
+    ("speeding", "truck on highway seen from patrol car roadside"),
+    ("registration", "vehicle paperwork documents clipboard truck cab"),
+    ("fuel tax", "fuel pump truck stop diesel receipt"),
     ("clearinghouse", "database server records archive"),
     ("csa score", "truck safety inspection clipboard mechanic"),
     ("violation", "truck brake wheel inspection mechanic hands"),
