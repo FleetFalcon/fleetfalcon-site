@@ -430,6 +430,15 @@ export type BlogPost = {
 // Blog index metadata. Article bodies live in their route files.
 export const blogPosts: BlogPost[] = [
   {
+    slug: "violations-that-score-zero",
+    title: "The violations that score zero on your CSA — and still ticket your drivers",
+    description:
+      "Registration, fuel tax, excessive weight and speeding 1–5 mph over carry no CSA severity weight at all. Across three real carriers, 20–46% of their citations were these. They cost you nothing on your score and every one of them is a real ticket.",
+    published: "2026-10-25",
+    readingTime: "6 min read",
+    author: "FleetFalcon Team",
+  },
+  {
     slug: "fleetfalcon-vs-alternatives",
     title: "FleetFalcon vs. the alternatives: J.J. Keller, SambaSafety, Foley & Motive",
     description:

@@ -101,7 +101,7 @@ export default function NegligentHiringPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader photo="semi-trucks"
+        <PostHeader slug="negligent-hiring-dq-file-defense"
                     alt="Trucks in service — every one of them driven by someone whose file has to hold up" />
 
         {/* Lead answer (AEO) */}

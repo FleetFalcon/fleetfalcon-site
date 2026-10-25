@@ -102,7 +102,7 @@ export default function NewCarrierMistakesPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader photo="delivery-truck"
+        <PostHeader slug="new-carrier-compliance-mistakes"
                     alt="A new carrier's first miles, where the compliance clock starts whether anyone watches it or not" />
 
         {/* Lead answer (AEO) */}

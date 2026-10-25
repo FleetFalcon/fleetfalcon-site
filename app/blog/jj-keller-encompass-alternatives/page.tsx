@@ -101,7 +101,7 @@ export default function KellerAlternativesPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader photo="warehouse"
+        <PostHeader slug="jj-keller-encompass-alternatives"
                     alt="The operation a legacy compliance platform was built around" />
 
         {/* Lead answer (AEO) */}

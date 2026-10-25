@@ -101,7 +101,7 @@ export default function GreenScorePostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader motif="chart" image="/screenshots/violation-radar-pulse.png"
+        <PostHeader image="/screenshots/violation-radar-pulse.png"
                     alt="Violation Radar's feed, ranking a fleet's violations by severity rather than by date" />
 
         {/* Lead answer (AEO) */}

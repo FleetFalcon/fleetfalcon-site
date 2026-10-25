@@ -102,7 +102,7 @@ export default function SafetyComplianceOverlapPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader photo="delivery-truck"
+        <PostHeader slug="safety-and-compliance-overlap"
                     alt="Trucks in service, where the safety job and the compliance job stop being separable" />
 
         {/* Lead answer (AEO) */}

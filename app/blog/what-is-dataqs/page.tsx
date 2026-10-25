@@ -101,7 +101,7 @@ export default function DataQsPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader photo="container-truck"
+        <PostHeader slug="what-is-dataqs"
                     alt="A container truck on the road — where the violation you may want to challenge is written" />
 
         {/* Lead answer (AEO) */}

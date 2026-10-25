@@ -101,7 +101,7 @@ export default function CanadaPostPage() {
           <span className="text-eyebrow text-foreground-faint">· {post.readingTime}</span>
         </div>
 
-        <PostHeader photo="canada-highway"
+        <PostHeader slug="dot-compliance-canada-cvor-nsc"
                     alt="The Trans-Canada Highway in Ontario, where CVOR and NSC rules apply instead of FMCSA's" />
 
         {/* Lead answer (AEO) */}
