@@ -28,8 +28,9 @@ export default function PricingPage() {
           </h1>
           <p className="measure mt-5 text-lg leading-relaxed text-foreground-muted">
             One price per tier, chosen by how many trucks you run. Start any self-serve plan with a
-            free month — we&apos;ll recommend the tier that matches your fleet. Over 100 trucks, or a
-            multi-carrier consortium? Enterprise is quoted per deal.
+            free month — we&apos;ll recommend the tier that matches your fleet. Over 100 trucks, a
+            multi-carrier consortium, or a safety consultant carrying a book of clients? Enterprise
+            is quoted per deal.
           </p>
 
           <div className="mt-12">
