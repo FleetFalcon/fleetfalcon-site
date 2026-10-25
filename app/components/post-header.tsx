@@ -64,9 +64,10 @@ export function PostHeader({
             priority
           />
         </div>
-        {/* Credit where the licence requires it, and a quiet note where the image is not a
-            photograph — a reader is entitled to know which is which. */}
-        {entry.attribute ? (
+        {/* Only where the licence requires a credit. Generated images carry no caption — the
+            origin is recorded in the manifest for anyone who needs it, and a caption under
+            every header was a line of chrome on every post. */}
+        {entry.attribute && (
           <figcaption className="mt-2 text-xs text-foreground-faint">
             Photo:{" "}
             <a href={entry.source} className="underline" rel="noopener nofollow">
@@ -74,9 +75,7 @@ export function PostHeader({
             </a>{" "}
             · {entry.license}
           </figcaption>
-        ) : entry.origin === "generated" ? (
-          <figcaption className="mt-2 text-xs text-foreground-faint">Illustration</figcaption>
-        ) : null}
+        )}
       </figure>
     );
   }
