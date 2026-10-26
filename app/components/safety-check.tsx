@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { registerUrl } from "../signup";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
@@ -412,7 +413,7 @@ export function SafetyCheck() {
 
               <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
                 <Link
-                  href="/pricing"
+                  href={registerUrl("safety_check")}
                   className="inline-flex items-center gap-1.5 text-sm font-bold text-accent hover:underline"
                 >
                   Fix what&apos;s on your record — start your free month

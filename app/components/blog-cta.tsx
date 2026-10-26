@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { registerUrl } from "../signup";
 import { ArrowUpRight } from "lucide-react";
 
 // Shared end-of-post CTA. Price-forward and offers a low-commitment diagnostic (the free
@@ -31,7 +32,7 @@ export function BlogCta() {
         {/* The transparent 2px border buys nothing visually; it just makes the filled button
             the same 60px tall as the bordered one beside it, instead of 4px shorter. */}
         <Link
-          href="/pricing"
+          href={registerUrl("blog_cta")}
           className="lift inline-flex w-full items-center justify-center gap-1.5 whitespace-nowrap rounded-lg border-2 border-transparent bg-accent-strong px-6 py-4 text-base font-bold text-accent-foreground shadow-sm hover:shadow-lg sm:w-auto sm:px-7"
         >
           Start your free month

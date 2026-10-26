@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { registerUrl } from "../signup";
 import { useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { Wordmark } from "./logo";
@@ -52,7 +53,7 @@ export function Nav() {
             Log in
           </a>
           <Link
-            href="/pricing"
+            href={registerUrl("nav_desktop")}
             className="inline-flex items-center gap-1.5 rounded-lg bg-accent-strong px-4 py-2 text-sm font-bold text-accent-foreground transition-opacity hover:opacity-90"
           >
             Start free month
@@ -94,7 +95,7 @@ export function Nav() {
               Log in
             </a>
             <Link
-              href="/pricing"
+              href={registerUrl("nav_mobile")}
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-lg bg-accent-strong px-4 py-3 text-base font-bold text-accent-foreground"
             >

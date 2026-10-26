@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { registerUrl } from "../signup";
 import Link from "next/link";
 import { ArrowRight, Radar, ScanLine, ShieldAlert, FileCheck2, Sparkles } from "lucide-react";
 import { SafetyCheck } from "../components/safety-check";
@@ -189,7 +190,7 @@ export default function ViolationRadarPage() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
-                href="/pricing"
+                href={registerUrl("violation_radar")}
                 className="lift inline-flex items-center justify-center gap-2 rounded-lg border-2 border-transparent bg-accent-strong px-7 py-4 text-base font-bold text-accent-foreground shadow-sm hover:shadow-lg"
               >
                 Start your free month

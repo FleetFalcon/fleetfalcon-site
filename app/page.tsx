@@ -1,4 +1,5 @@
 import { existsSync } from "node:fs";
+import { registerUrl } from "./signup";
 import path from "node:path";
 import Link from "next/link";
 import Image from "next/image";
@@ -91,7 +92,7 @@ export default function Home() {
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Link
-                  href="/pricing"
+                  href={registerUrl("home_hero")}
                   className="lift inline-flex items-center justify-center gap-2 rounded-lg border-2 border-transparent bg-accent-strong px-7 py-4 text-base font-bold text-accent-foreground shadow-sm hover:shadow-lg"
                 >
                   Start your free month
@@ -407,7 +408,7 @@ export default function Home() {
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
-              href="/pricing"
+              href={registerUrl("home_close")}
               className="lift inline-flex w-full items-center justify-center gap-2 rounded-lg border-2 border-transparent bg-accent-strong px-7 py-4 text-base font-bold text-accent-foreground shadow-sm hover:shadow-lg sm:w-auto"
             >
               Start your free month

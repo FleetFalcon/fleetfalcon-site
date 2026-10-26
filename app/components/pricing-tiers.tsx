@@ -3,23 +3,12 @@
 import Link from "next/link";
 import { Check, GraduationCap } from "lucide-react";
 import { Reveal } from "./reveal";
+import { planRegisterUrl } from "../signup";
 import { pricingTiers, includedInEveryPlan, englishTestingAddOn } from "../content";
 
-// Self-serve "Start your free month" sends the buyer to the app to create their account and start
-// the trial — NOT to /demo (that's the Book-a-demo calendar, for Enterprise only).
-//
-// The `?plan=` carries the chosen tier through signup and opens Stripe Checkout for it on the
-// other side (register/page.tsx -> RegisterForm -> /billing?plan=). Checkout is created SERVER
-// side: it needs the org that signup just created and the Stripe price ID from
-// `Stripe:Plans:{code}` config, neither of which this static marketing site has or should have.
-// The 30-day trial is applied server-side (EntitlementService.TrialDays), so the card on file is
-// not charged today — which is what "start your free month" has to mean to be honest.
-//
-// It must be /register: the app root drops unknown query params, so `${APP_URL}?plan=x` silently
-// lost the tier and dumped the buyer on a generic landing page.
-const APP_URL = "https://app.fleetfalcon.io/";
-const registerUrl = (code: string) =>
-  `${APP_URL}register?plan=${encodeURIComponent(code.toLowerCase())}&source=pricing_${encodeURIComponent(code.toLowerCase())}`;
+// The register URL, its optional `?plan=` and the reasons behind both live in `app/signup.ts`.
+// They were local to this file, which is why seven trial buttons elsewhere on this site were
+// pointing at /pricing: a rule kept inside one component is one the rest of the site cannot follow.
 // English testing is a standalone product with its OWN signup page — the same register URL the
 // existing ELP landing page uses. The ?source=english_test param must be preserved.
 const ELP_URL = "https://app.fleetfalcon.io/register?source=english_test";
@@ -62,7 +51,7 @@ export function PricingTiers() {
 
             {t.selfServe ? (
               <a
-                href={registerUrl(t.code)}
+                href={planRegisterUrl(t.code)}
                 className="mt-6 inline-flex items-center justify-center rounded-lg bg-accent-strong px-4 py-2.5 text-sm font-bold text-accent-foreground transition-opacity hover:opacity-90"
               >
                 Start your free month
