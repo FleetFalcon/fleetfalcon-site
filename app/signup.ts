@@ -10,8 +10,10 @@
  * Everything the old comment recorded still holds and is the reason this is a function rather
  * than a string:
  *
- *   **It must be `/register`.** The app root drops unknown query parameters, so
- *   `${APP_URL}?plan=x` silently lost the tier and dumped the buyer on a generic landing page.
+ *   **New accounts open in Supervision** (`/session/new`), not legacy `/register` (SCRUM-510).
+ *   Supervision does not read `plan` or `source` yet; both stay in the URL so attribution and the
+ *   tier can be picked up there without touching this site again. Until then the buyer chooses a
+ *   plan under Company → Billing, which is the same Stripe checkout.
  *
  *   **`?plan=` is optional and must stay optional.** It carries a chosen tier through signup and
  *   opens Stripe Checkout for it on the other side (`register/page.tsx` → `RegisterForm` →
@@ -30,13 +32,13 @@
  * Not for Enterprise, which books a call — that is `/demo` — and not for English testing, which
  * is a standalone product with its own `?source=english_test` signup.
  */
-const APP_URL = "https://app.fleetfalcon.io";
+const SIGN_UP_URL = "https://supervision.fleetfalcon.io/session/new";
 
 export function registerUrl(source: string, plan?: string): string {
   const params = new URLSearchParams();
   if (plan) params.set("plan", plan.toLowerCase());
   params.set("source", source);
-  return `${APP_URL}/register?${params}`;
+  return `${SIGN_UP_URL}?${params}`;
 }
 
 /** The tier cards, which do have a tier to carry. */
