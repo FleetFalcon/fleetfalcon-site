@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Check, GraduationCap } from "lucide-react";
 import { Reveal } from "./reveal";
-import { planRegisterUrl } from "../signup";
+import { planRegisterUrl, registerUrl } from "../signup";
 import { pricingTiers, includedInEveryPlan, englishTestingAddOn } from "../content";
 
 // The register URL, its optional `?plan=` and the reasons behind both live in `app/signup.ts`.
@@ -11,7 +11,7 @@ import { pricingTiers, includedInEveryPlan, englishTestingAddOn } from "../conte
 // pointing at /pricing: a rule kept inside one component is one the rest of the site cannot follow.
 // English testing is a standalone product with its OWN signup page — the same register URL the
 // existing ELP landing page uses. The ?source=english_test param must be preserved.
-const ELP_URL = "https://app.fleetfalcon.io/register?source=english_test";
+const ELP_URL = registerUrl("english_test");
 
 export function PricingTiers() {
   return (

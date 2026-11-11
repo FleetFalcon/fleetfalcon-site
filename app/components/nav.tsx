@@ -21,7 +21,7 @@ const LINKS = [
   { label: "Contact", href: "/contact" },
 ];
 
-const APP_URL = "https://app.fleetfalcon.io/";
+const APP_URL = "https://supervision.fleetfalcon.io/session";
 const isExternal = (href: string) => /^(mailto:|tel:|https?:)/.test(href);
 
 export function Nav() {

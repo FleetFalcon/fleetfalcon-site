@@ -4,6 +4,7 @@ import { ArrowRight, MessageSquare, UserCheck, Mic, FileCheck2, ShieldAlert } fr
 import { Reveal } from "../components/reveal";
 import { Shot } from "../components/shot";
 import { englishTestingAddOn } from "../content";
+import { registerUrl } from "../signup";
 
 export const metadata: Metadata = {
   title: "English Language Proficiency testing — $10 per test, no subscription",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
  * and tailors the register page's copy). The subscription is mentioned once, at the bottom, as
  * context rather than as the ask.
  */
-const ELP_SIGNUP = "https://app.fleetfalcon.io/register?source=english_test";
+const ELP_SIGNUP = registerUrl("english_test");
 
 const STEPS = [
   {
