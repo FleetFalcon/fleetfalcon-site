@@ -16,7 +16,7 @@ const COMPANY = [
   { label: "Blog", href: "/blog" },
   { label: "Mission", href: "/#mission" },
   { label: "Book a demo", href: "/demo" },
-  { label: "Log in", href: "https://supervision.fleetfalcon.io/session" },
+  { label: "Log in", href: "https://app.fleetfalcon.io/session" },
 ];
 
 const LEGAL = [
