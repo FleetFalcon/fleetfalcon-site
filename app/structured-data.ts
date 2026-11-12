@@ -22,7 +22,7 @@ export const organizationSchema = {
   logo: LOGO,
   image: LOGO,
   description: DESCRIPTION,
-  sameAs: ["https://www.youtube.com/@FleetFalconTrucking", "https://supervision.fleetfalcon.io"],
+  sameAs: ["https://www.youtube.com/@FleetFalconTrucking", "https://app.fleetfalcon.io"],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",

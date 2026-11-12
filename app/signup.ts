@@ -15,7 +15,7 @@
  *
  * Not for Enterprise, which books a call — that is `/demo`.
  */
-const SIGN_UP_URL = "https://supervision.fleetfalcon.io/session/new";
+const SIGN_UP_URL = "https://app.fleetfalcon.io/session/new";
 
 export function registerUrl(source: string, plan?: string): string {
   const params = new URLSearchParams();
