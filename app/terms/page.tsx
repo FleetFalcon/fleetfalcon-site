@@ -12,7 +12,7 @@ export default function TermsPage() {
   return (
     <LegalPage
       title="Terms and Conditions"
-      updated="October 3, 2026"
+      updated="November 14, 2026"
       intro={
         <>
           These Terms and Conditions (&quot;Terms&quot;) govern access to and use of the website at
@@ -154,6 +154,38 @@ export default function TermsPage() {
           proficiency. It is a recordkeeping tool only. FleetFalcon does not make, and is not responsible
           for, any qualification, disqualification, or out-of-service determination, which remains the
           responsibility of the Customer and the applicable enforcement authorities.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="10A. Text Messages (SMS)">
+        <p>
+          FleetFalcon sends text messages to Drivers, driver applicants, and Authorized Users on behalf
+          of the Customer, from FleetFalcon&apos;s own registered number. Each message names the
+          Customer. Messages are about compliance only: requests for documents, reminders about missing
+          or expiring documents, links to upload a document or complete a form, replies to messages a
+          Driver sends, and document expiry alerts. We do not send marketing messages.
+        </p>
+        <LegalList
+          items={[
+            "Consent to receive texts is not a condition of employment or of any purchase.",
+            "Message frequency varies. Automated reminders go to a Driver at most once a day and three times a week, and only between 8 a.m. and 8 p.m. local time. Expiry alerts to an Authorized User go at most once a day.",
+            "Message and data rates may apply.",
+            <>
+              Reply STOP to any message to opt out, and START to opt back in. Reply HELP for help, or
+              contact{" "}
+              <a href="mailto:support@fleetfalcon.io" className="text-accent underline hover:no-underline">
+                support@fleetfalcon.io
+              </a>
+              .
+            </>,
+            "Wireless carriers are not liable for delayed or undelivered messages.",
+          ]}
+        />
+        <p>
+          The Customer represents that it has each Driver&apos;s consent to receive these texts at the
+          number it provides, that it will record that consent in the Services, and that it will keep it
+          current, including by withdrawing it when a Driver revokes consent or a number changes hands. A
+          STOP reply always takes effect, whatever consent is on record.
         </p>
       </LegalSection>
 
