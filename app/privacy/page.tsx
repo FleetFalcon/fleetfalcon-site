@@ -265,6 +265,13 @@ export default function PrivacyPage() {
               <strong className="font-semibold text-foreground">Vercel</strong> — frontend hosting.
             </>,
             <>
+              <strong className="font-semibold text-foreground">Telnyx</strong> — sending and receiving
+              text messages (Section 8A).
+            </>,
+            <>
+              <strong className="font-semibold text-foreground">Postmark</strong> — sending email.
+            </>,
+            <>
               <strong className="font-semibold text-foreground">AI/LLM provider(s)</strong> — automated
               analysis of compliance data, under no-training terms (Section 7).
             </>,
