@@ -22,7 +22,7 @@ export default function PrivacyPage() {
   return (
     <LegalPage
       title="Privacy Policy"
-      updated="October 3, 2026"
+      updated="November 14, 2026"
       intro={
         <>
           FleetFalcon Corp (&quot;FleetFalcon&quot;, &quot;we&quot;, &quot;our&quot;, or
@@ -265,6 +265,13 @@ export default function PrivacyPage() {
               <strong className="font-semibold text-foreground">Vercel</strong> — frontend hosting.
             </>,
             <>
+              <strong className="font-semibold text-foreground">Telnyx</strong> — sending and receiving
+              text messages (Section 8A).
+            </>,
+            <>
+              <strong className="font-semibold text-foreground">Postmark</strong> — sending email.
+            </>,
+            <>
               <strong className="font-semibold text-foreground">AI/LLM provider(s)</strong> — automated
               analysis of compliance data, under no-training terms (Section 7).
             </>,
@@ -276,6 +283,21 @@ export default function PrivacyPage() {
           lawful requests, or protect the rights, safety, and security of FleetFalcon, our Customers, or
           the public, and in connection with a merger, acquisition, or sale of assets (subject to this
           Policy).
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="8A. Text Messages (SMS)">
+        <p>
+          When the Services send text messages, we process the recipient&apos;s mobile number, the
+          messages sent and received, and records of consent, opt-out (STOP), and opt-in (START).
+        </p>
+        <p>
+          <strong className="font-semibold text-foreground">
+            Mobile numbers and SMS opt-in data and consent are not shared with or sold to third parties
+            or affiliates for marketing or promotional purposes.
+          </strong>{" "}
+          We use them only to deliver the messages and to keep records of consent and opt-out. Our
+          messaging provider and wireless carriers receive a number only to deliver a message to it.
         </p>
       </LegalSection>
 
