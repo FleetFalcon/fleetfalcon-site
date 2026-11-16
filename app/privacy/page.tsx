@@ -273,9 +273,8 @@ export default function PrivacyPage() {
               <strong className="font-semibold text-foreground">Postmark</strong> — sending email.
             </>,
             <>
-              <strong className="font-semibold text-foreground">PostHog</strong> — product analytics and
-              session replay of the Services, with on-screen text, form inputs and documents masked
-              (Section 9).
+              <strong className="font-semibold text-foreground">PostHog</strong> — session replay of the
+              Services, with on-screen text, form inputs and documents masked (Section 9).
             </>,
             <>
               <strong className="font-semibold text-foreground">AI/LLM provider(s)</strong> — automated
