@@ -22,7 +22,7 @@ export default function PrivacyPage() {
   return (
     <LegalPage
       title="Privacy Policy"
-      updated="November 14, 2026"
+      updated="November 16, 2026"
       intro={
         <>
           FleetFalcon Corp (&quot;FleetFalcon&quot;, &quot;we&quot;, &quot;our&quot;, or
@@ -149,7 +149,8 @@ export default function PrivacyPage() {
             </>,
             <>
               <strong className="font-semibold text-foreground">Usage &amp; device data:</strong> log
-              data, device/browser information, and Site analytics collected through Google Analytics.
+              data, device/browser information, Site analytics collected through Google Analytics, and,
+              in the Services, session replays of how Authorized Users use the app (see Section 9).
             </>,
           ]}
         />
@@ -161,7 +162,7 @@ export default function PrivacyPage() {
             "Directly from Authorized Users during account creation (sign-up forms or Google authentication) and ongoing use.",
             "From the Customer, through data and document uploads about its drivers and applicants.",
             "From third-party sources at the Customer's direction — e.g., MVR/PSP/background providers, and a carrier-authorized pull of the Customer's own FMCSA SMS/portal data.",
-            "Automatically, through cookies and analytics tools when you use the Site.",
+            "Automatically, through cookies and analytics tools when you use the Site, and through session replay when Authorized Users use the Services.",
             "From Stripe in connection with billing.",
           ]}
         />
@@ -272,6 +273,11 @@ export default function PrivacyPage() {
               <strong className="font-semibold text-foreground">Postmark</strong> — sending email.
             </>,
             <>
+              <strong className="font-semibold text-foreground">PostHog</strong> — product analytics and
+              session replay of the Services, with on-screen text, form inputs and documents masked
+              (Section 9).
+            </>,
+            <>
               <strong className="font-semibold text-foreground">AI/LLM provider(s)</strong> — automated
               analysis of compliance data, under no-training terms (Section 7).
             </>,
@@ -311,6 +317,17 @@ export default function PrivacyPage() {
           The Site uses cookies and similar technologies, including Google Analytics, to understand how
           the Site is used. You can control cookies through your browser settings. Analytics data is
           used to operate and improve the Site, not to build advertising profiles.
+        </p>
+        <p>
+          <strong className="font-semibold text-foreground">Session replay.</strong> To find and fix
+          problems in the Services, we may record how Authorized Users of carrier and consultant
+          accounts move through the app — page layout, clicks, scrolling and page changes — using
+          PostHog. Recordings mask all on-screen text and every form input, block document previews,
+          images and signatures, and keep web addresses only as the type of page (never a driver&apos;s
+          name or record number). We never record the pages drivers or job applicants open from a link
+          (their document requests, folders, tests, policy signing or applications). Recordings are
+          used only to operate and improve the Services, are kept for a limited period, and are not sold
+          or used for advertising.
         </p>
       </LegalSection>
 
