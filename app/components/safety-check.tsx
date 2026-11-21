@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { registerUrl } from "../signup";
+import { track } from "@vercel/analytics";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
@@ -123,6 +124,36 @@ function topRisks(r: Result): Risk[] {
   return out.slice(0, 3);
 }
 
+// SCRUM-676: every check is a lead. The FleetFalcon API keeps one row per USDOT per day (no IP, no
+// person) and follows it up in HubSpot; the event counts it in Vercel Analytics. Never blocks the result.
+const DOT_CHECK_URL =
+  process.env.NEXT_PUBLIC_DOT_CHECK_URL ??
+  (process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
+    ? "https://supervision-prod-ff-production.up.railway.app/api/public/dot-checks"
+    : "https://supervision-ff-staging.up.railway.app/api/public/dot-checks");
+const UTM = /^[A-Za-z0-9._\- +]{1,100}$/;
+
+function recordDotCheck(usdot: string, rendered: boolean) {
+  try {
+    const q = new URLSearchParams(window.location.search);
+    const utm = (k: string) => {
+      const v = q.get(k)?.trim();
+      return v && UTM.test(v) ? v : null;
+    };
+    let referrer: string | null = null;
+    try {
+      referrer = document.referrer ? new URL(document.referrer).origin : null;
+    } catch {}
+    const body = JSON.stringify({
+      usdot, source: "site", rendered, referrer,
+      utmSource: utm("utm_source"), utmMedium: utm("utm_medium"), utmCampaign: utm("utm_campaign"),
+    });
+    const sent = navigator.sendBeacon?.(DOT_CHECK_URL, new Blob([body], { type: "text/plain" }));
+    if (!sent) void fetch(DOT_CHECK_URL, { method: "POST", body, keepalive: true, headers: { "Content-Type": "text/plain" } }).catch(() => {});
+    track("DOT check", { source: "site", rendered });
+  } catch {}
+}
+
 // Real FMCSA pull via /api/safety-check (public SAFER + SMS BASIC + violation open data, no key).
 export function SafetyCheck() {
   const [value, setValue] = useState("");
@@ -151,6 +182,8 @@ export function SafetyCheck() {
         setError(`No carrier found for ${cleaned}. Double-check the USDOT or MC number.`);
       } else {
         setResult(data);
+        // The number FMCSA answered for (the box also takes an MC number).
+        if (data.dot) recordDotCheck(data.dot, true);
       }
     } catch {
       setError("Couldn't reach FMCSA just now — try again in a moment.");
