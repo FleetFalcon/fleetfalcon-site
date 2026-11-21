@@ -7,6 +7,7 @@ import { Footer } from "./components/footer";
 import { JsonLd } from "./components/json-ld";
 import { HashScroll } from "./components/hash-scroll";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import { allSchemas } from "./structured-data";
 
 // Display + body — Plus Jakarta Sans (bold geometric sans; heavy weights for punchy
@@ -109,6 +110,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
+        {/* SCRUM-676: Vercel Web Analytics. Cookieless; page views, referrers, UTM, countries. */}
+        <Analytics />
       </body>
     </html>
   );
